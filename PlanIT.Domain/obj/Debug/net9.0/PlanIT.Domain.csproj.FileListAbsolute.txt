@@ -1,0 +1,11 @@
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.Domain\bin\Debug\net9.0\PlanIT.Domain.deps.json
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.Domain\bin\Debug\net9.0\PlanIT.Domain.dll
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.Domain\bin\Debug\net9.0\PlanIT.Domain.pdb
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.Domain\obj\Debug\net9.0\PlanIT.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.Domain\obj\Debug\net9.0\PlanIT.Domain.AssemblyInfoInputs.cache
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.Domain\obj\Debug\net9.0\PlanIT.Domain.AssemblyInfo.cs
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.Domain\obj\Debug\net9.0\PlanIT.Domain.csproj.CoreCompileInputs.cache
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.Domain\obj\Debug\net9.0\PlanIT.Domain.dll
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.Domain\obj\Debug\net9.0\refint\PlanIT.Domain.dll
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.Domain\obj\Debug\net9.0\PlanIT.Domain.pdb
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.Domain\obj\Debug\net9.0\ref\PlanIT.Domain.dll

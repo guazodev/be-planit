@@ -1,0 +1,15 @@
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.DataAccess\bin\Debug\net9.0\PlanIT.DataAccess.deps.json
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.DataAccess\bin\Debug\net9.0\PlanIT.DataAccess.dll
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.DataAccess\bin\Debug\net9.0\PlanIT.DataAccess.pdb
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.DataAccess\bin\Debug\net9.0\PlanIT.Domain.dll
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.DataAccess\bin\Debug\net9.0\PlanIT.Domain.pdb
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.DataAccess\obj\Debug\net9.0\PlanIT.DataAccess.csproj.AssemblyReference.cache
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.DataAccess\obj\Debug\net9.0\PlanIT.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.DataAccess\obj\Debug\net9.0\PlanIT.DataAccess.AssemblyInfoInputs.cache
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.DataAccess\obj\Debug\net9.0\PlanIT.DataAccess.AssemblyInfo.cs
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.DataAccess\obj\Debug\net9.0\PlanIT.DataAccess.csproj.CoreCompileInputs.cache
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.DataAccess\obj\Debug\net9.0\PlanIT.D.15FB15C0.Up2Date
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.DataAccess\obj\Debug\net9.0\PlanIT.DataAccess.dll
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.DataAccess\obj\Debug\net9.0\refint\PlanIT.DataAccess.dll
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.DataAccess\obj\Debug\net9.0\PlanIT.DataAccess.pdb
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.DataAccess\obj\Debug\net9.0\ref\PlanIT.DataAccess.dll

@@ -1,0 +1,17 @@
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.BusinessLogic\bin\Debug\net9.0\PlanIT.BusinessLogic.deps.json
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.BusinessLogic\bin\Debug\net9.0\PlanIT.BusinessLogic.dll
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.BusinessLogic\bin\Debug\net9.0\PlanIT.BusinessLogic.pdb
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.BusinessLogic\bin\Debug\net9.0\PlanIT.DataAccess.dll
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.BusinessLogic\bin\Debug\net9.0\PlanIT.Domain.dll
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.BusinessLogic\bin\Debug\net9.0\PlanIT.DataAccess.pdb
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.BusinessLogic\bin\Debug\net9.0\PlanIT.Domain.pdb
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.BusinessLogic\obj\Debug\net9.0\PlanIT.BusinessLogic.csproj.AssemblyReference.cache
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.BusinessLogic\obj\Debug\net9.0\PlanIT.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.BusinessLogic\obj\Debug\net9.0\PlanIT.BusinessLogic.AssemblyInfoInputs.cache
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.BusinessLogic\obj\Debug\net9.0\PlanIT.BusinessLogic.AssemblyInfo.cs
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.BusinessLogic\obj\Debug\net9.0\PlanIT.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.BusinessLogic\obj\Debug\net9.0\PlanIT.B.E3EB24FD.Up2Date
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.BusinessLogic\obj\Debug\net9.0\PlanIT.BusinessLogic.dll
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.BusinessLogic\obj\Debug\net9.0\refint\PlanIT.BusinessLogic.dll
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.BusinessLogic\obj\Debug\net9.0\PlanIT.BusinessLogic.pdb
+C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.BusinessLogic\obj\Debug\net9.0\ref\PlanIT.BusinessLogic.dll

@@ -1,0 +1,56 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "PlanIT.BusinessLogic/1.0.0": {
+        "dependencies": {
+          "PlanIT.DataAccess": "1.0.0",
+          "PlanIT.Domain": "1.0.0"
+        },
+        "runtime": {
+          "PlanIT.BusinessLogic.dll": {}
+        }
+      },
+      "PlanIT.DataAccess/1.0.0": {
+        "dependencies": {
+          "PlanIT.Domain": "1.0.0"
+        },
+        "runtime": {
+          "PlanIT.DataAccess.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "PlanIT.Domain/1.0.0": {
+        "runtime": {
+          "PlanIT.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PlanIT.BusinessLogic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PlanIT.DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PlanIT.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
