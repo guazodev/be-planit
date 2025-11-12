@@ -8,9 +8,12 @@ using PlanIT.Domain.Interfaces;
 using PlanIT.Infraestructure.Data;
 using PlanIT.Infraestructure.Repositories;
 using PlanIT.BusinessLogic.DTOs;
-
-
-
+using PlanIT.Infrastructure.Repositories; // Aca está la clase de UserRepository, casi me mareo
+// Importaciones para Token
+using PlanIT.Infraestructure.Authentication;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 // ========================================================================================================================
 // 0. Builder, aca inicia la aplicacion 
@@ -52,6 +55,31 @@ builder.Services.AddScoped<ITravelRepository, TravelRepository>();
 builder.Services.AddScoped<ITravelService, TravelService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
+
+builder.Services.AddScoped<IJwtProvider, JwtProvider>();
+
+// Configuracion de autenticacion
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!)
+            )
+        };
+    });
+
+builder.Services.AddAuthorization(); // Necesario para .RequireAuthorization()
+
 // ===========================================================================================================================
 // Integraciones, FEIKS Jei, mientras tanto despues cambiamos 
 
@@ -79,6 +107,10 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
 
+// Orden de token
+app.UseAuthentication();
+app.UseAuthorization();
+
 // ===========================================================================================================================
 // 5. ENDPOINTS (Presentaci�n)
 // ===========================================================================================================================
@@ -88,7 +120,7 @@ app.MapPost("/api/travels", async (
     TravelCreationDto dto,
     ITravelService travelService) =>
 {
-try
+    try
     {
         // 1. Llamar al servicio
         var createdTravel = await travelService.CreateTravelAsync(dto);
@@ -107,7 +139,8 @@ try
         return Results.Problem("Ocurrió un error inesperado: " + ex.Message);
     }
 })
-.WithName("CreateTravel");
+.WithName("CreateTravel")
+.RequireAuthorization();
 
 // ENDPOINT GET: LISTAR Viajes por Usuario
 app.MapGet("/api/travels/user/{userId:guid}", async (
@@ -120,7 +153,50 @@ app.MapGet("/api/travels/user/{userId:guid}", async (
         ? Results.NotFound(new { message = $"No se encontraron viajes para el usuario {userId}." })
         : Results.Ok(travels);
 })
-.WithName("GetUserTravels");
+.WithName("GetUserTravels")
+.RequireAuthorization();
+
+// ENDPOINT POST: Registro Usuario
+app.MapPost("/api/auth/register", async (
+    UserRegisterDto dto,
+    IUserService userService) =>
+{
+    try
+    {
+        await userService.RegisterAsync(dto);
+        return Results.Ok(new { message = "Usuario registrado exitosamente." });
+    }
+    catch (ArgumentException ex)
+    {
+        return Results.BadRequest(new { message = ex.Message });
+    }
+    catch (Exception ex)
+    {
+        return Results.Problem("Ocurrió un error inesperado: " + ex.Message);
+    }
+})
+.WithName("RegisterUser");
+
+// ENDPOINT POST: Login User
+app.MapPost("/api/auth/login", async (
+    UserLoginDto dto,
+    IUserService userService) =>
+{
+    try
+    {
+        var token = await userService.LoginAsync(dto);
+        return Results.Ok(new { token = token }); // Devuelve el token
+    }
+    catch (ArgumentException ex)
+    {
+        return Results.BadRequest(new { message = ex.Message });
+    }
+    catch (Exception ex)
+    {
+        return Results.Problem("Ocurrió un error inesperado: " + ex.Message);
+    }
+})
+.WithName("LoginUser");
 
 app.Run();
 

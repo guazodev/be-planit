@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "esv+kmXz7BM=",
+  "dgSpecHash": "mNTIo9z5UN4=",
   "success": true,
   "projectFilePath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.BusinessLogic\\PlanIT.BusinessLogic.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Usuario\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

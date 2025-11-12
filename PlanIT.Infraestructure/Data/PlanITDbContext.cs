@@ -15,6 +15,9 @@ namespace PlanIT.Infraestructure.Data
         }
         public DbSet<Travel> Travels { get; set; }
 
-        //Aca engau irian otros DbSet de otras entidades (Users, Activities, etc)
+        public DbSet<User> Users { get; set; }
+
+
+        //Aca engau irian otros DbSet de otras entidades (Activities, etc)
     }
 }

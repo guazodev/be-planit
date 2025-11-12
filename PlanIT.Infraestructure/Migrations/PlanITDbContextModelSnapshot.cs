@@ -50,7 +50,42 @@ namespace PlanIT.Infraestructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("UserId");
+
                     b.ToTable("Travels");
+                });
+
+            modelBuilder.Entity("PlanIT.Domain.User", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("PlanIT.Domain.Travel", b =>
+                {
+                    b.HasOne("PlanIT.Domain.User", null)
+                        .WithMany("Travels")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("PlanIT.Domain.User", b =>
+                {
+                    b.Navigation("Travels");
                 });
 #pragma warning restore 612, 618
         }

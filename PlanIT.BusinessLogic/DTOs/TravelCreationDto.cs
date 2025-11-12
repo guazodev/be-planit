@@ -1,6 +1,5 @@
 ﻿namespace PlanIT.BusinessLogic.DTOs
 {
-    // DTO - Objeto de Transferencia de Daatos para la entrada en la API
     public class TravelCreationDto
     {
         public Guid UserId { get; set; }
