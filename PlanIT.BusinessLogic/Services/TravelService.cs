@@ -1,10 +1,9 @@
-﻿using PlanIT.BusinessLogic.Interfaces;
-using PlanIT.DataAccess.Interfaces;
-using PlanIT.Domain;
+﻿using PlanIT.BusinessLogic.Interfaces; // Para ITravelService
+using PlanIT.Domain.Interfaces;     // Para IUnitOfWork y ITravelRepository
+using PlanIT.Domain;                // Para la entidad Travel
+using PlanIT.BusinessLogic.DTOs;      
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace PlanIT.BusinessLogic.Services
@@ -12,25 +11,35 @@ namespace PlanIT.BusinessLogic.Services
     public class TravelService : ITravelService
     {
         private readonly ITravelRepository _travelRepository;
-        public TravelService(ITravelRepository travelRepository)
+        private readonly IUnitOfWork _unitOfWork;
+        
+        public TravelService(ITravelRepository travelRepository, IUnitOfWork unitOfWork)
         {
             _travelRepository = travelRepository;
+            _unitOfWork = unitOfWork;
         }
 
-        public async Task<Travel> CreateTravelAsync(Travel travel)
+        public async Task<Travel> CreateTravelAsync(TravelCreationDto dto)
         {
-
-            //Validaciones de negocio: Validar datos obligatorios antes de guardar
-            if (string.IsNullOrEmpty(travel.Destination) || travel.UserId == Guid.Empty)
+            // Validaciones (usando el DTO)
+            if (string.IsNullOrEmpty(dto.Destination) || dto.UserId == Guid.Empty)
                 throw new ArgumentException("El Destino y el ID de usuario son Obligatorios.");
-            
-            // Se llama al repositorio con el objeto travel que ya tiene el Guid
-            await _travelRepository.AddAsync(travel);
-            await _travelRepository.SaveChangesAsync();
 
+            // Crear la entiendad
+            var travel = new Travel
+            {
+                Id = Guid.NewGuid(),
+                UserId = dto.UserId,
+                Destination = dto.Destination,
+                DurationDays = dto.DurationDays,
+                EstimatedBudget = dto.EstimatedBudget,
+                TravelStyle = dto.TravelStyle,
+            };
+            
+            await _travelRepository.AddAsync(travel);
+            await _unitOfWork.SaveChangesAsync();
 
             return travel;
-     
         }
 
         public async Task<IEnumerable<Travel>> GetTravelsByUserIdAsync(Guid userId)

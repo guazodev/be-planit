@@ -1,4 +1,4 @@
-﻿namespace PlanIT.WebApi.DTOs
+﻿namespace PlanIT.BusinessLogic.DTOs
 {
     // DTO - Objeto de Transferencia de Daatos para la entrada en la API
     public class TravelCreationDto

@@ -5,11 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PlanIT.Domain;
-using PlanIT.DataAccess.Interfaces;
 
 
 
-namespace PlanIT.DataAccess.Interfaces;
+namespace PlanIT.Domain.Interfaces;
 
 // Contrato de Puerto de DB, Contrato que la Infraestructura debe implementar.
 public interface ITravelRepository

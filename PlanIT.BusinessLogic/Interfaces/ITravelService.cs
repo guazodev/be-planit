@@ -1,4 +1,5 @@
 ﻿using PlanIT.Domain;
+using PlanIT.BusinessLogic.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace PlanIT.BusinessLogic.Interfaces
 {
     public interface ITravelService
     {
-        Task<Travel> CreateTravelAsync(Travel travel);
+        Task<Travel> CreateTravelAsync(TravelCreationDto travel);
         Task<IEnumerable<Travel>> GetTravelsByUserIdAsync(Guid userId);
 
     }

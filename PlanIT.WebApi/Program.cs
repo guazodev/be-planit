@@ -4,9 +4,10 @@ using PlanIT.BusinessLogic.Interfaces;
 using PlanIT.BusinessLogic.Services;
 using PlanIT.DataAccess.Interfaces;
 using PlanIT.Domain;
+using PlanIT.Domain.Interfaces;
 using PlanIT.Infraestructure.Data;
 using PlanIT.Infraestructure.Repositories;
-using PlanIT.WebApi.DTOs;
+using PlanIT.BusinessLogic.DTOs;
 
 
 
@@ -49,6 +50,7 @@ builder.Services.AddDbContext<PlanITDbContext>(options =>
 
 builder.Services.AddScoped<ITravelRepository, TravelRepository>();
 builder.Services.AddScoped<ITravelService, TravelService>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 // ===========================================================================================================================
 // Integraciones, FEIKS Jei, mientras tanto despues cambiamos 
@@ -75,10 +77,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseCors("CorsPolicy");
+app.UseCors("AllowAll");
 
 // ===========================================================================================================================
-// 5. ENDPOINTS (Presentaci�n)
+// 5. ENDPOINTS (Presentaci�n)
 // ===========================================================================================================================
 
 // ENDPOINT POST: CREAR Viaje
@@ -86,24 +88,23 @@ app.MapPost("/api/travels", async (
     TravelCreationDto dto,
     ITravelService travelService) =>
 {
-    try
+try
     {
-        var newTravel = new Travel
-        {
-            UserId = dto.UserId,
-            Destination = dto.Destination,
-            DurationDays = dto.DurationDays,
-            EstimatedBudget = dto.EstimatedBudget,
-            TravelStyle = dto.TravelStyle
-        };
+        // 1. Llamar al servicio
+        var createdTravel = await travelService.CreateTravelAsync(dto);
 
-        var createdTravel = await travelService.CreateTravelAsync(newTravel);
-
+        // 2. Devolver 201 Created con el objeto
         return Results.Created($"/api/travels/{createdTravel.Id}", createdTravel);
     }
     catch (ArgumentException ex)
     {
+        // 3. Manejar errores de validación (400)
         return Results.BadRequest(new { message = ex.Message });
+    }
+    catch (Exception ex)
+    {
+        // 4. Manejar errores del servidor (500)
+        return Results.Problem("Ocurrió un error inesperado: " + ex.Message);
     }
 })
 .WithName("CreateTravel");

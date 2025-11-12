@@ -9,3 +9,15 @@ C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.Domain\obj\Debug\net9
 C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.Domain\obj\Debug\net9.0\refint\PlanIT.Domain.dll
 C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.Domain\obj\Debug\net9.0\PlanIT.Domain.pdb
 C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.Domain\obj\Debug\net9.0\ref\PlanIT.Domain.dll
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.Domain\bin\Debug\net9.0\PlanIT.Domain.deps.json
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.Domain\bin\Debug\net9.0\PlanIT.Domain.dll
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.Domain\bin\Debug\net9.0\PlanIT.Domain.pdb
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.Domain\obj\Debug\net9.0\PlanIT.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.Domain\obj\Debug\net9.0\PlanIT.Domain.AssemblyInfoInputs.cache
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.Domain\obj\Debug\net9.0\PlanIT.Domain.AssemblyInfo.cs
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.Domain\obj\Debug\net9.0\PlanIT.Domain.csproj.CoreCompileInputs.cache
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.Domain\obj\Debug\net9.0\PlanIT.Domain.sourcelink.json
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.Domain\obj\Debug\net9.0\PlanIT.Domain.dll
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.Domain\obj\Debug\net9.0\refint\PlanIT.Domain.dll
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.Domain\obj\Debug\net9.0\PlanIT.Domain.pdb
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.Domain\obj\Debug\net9.0\ref\PlanIT.Domain.dll

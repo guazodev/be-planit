@@ -13,3 +13,19 @@ C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.DataAccess\obj\Debug\
 C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.DataAccess\obj\Debug\net9.0\refint\PlanIT.DataAccess.dll
 C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.DataAccess\obj\Debug\net9.0\PlanIT.DataAccess.pdb
 C:\Neetzs\Developer\Planit\be-planit\backend\PlanIT\PlanIT.DataAccess\obj\Debug\net9.0\ref\PlanIT.DataAccess.dll
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.DataAccess\bin\Debug\net9.0\PlanIT.DataAccess.deps.json
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.DataAccess\bin\Debug\net9.0\PlanIT.DataAccess.dll
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.DataAccess\bin\Debug\net9.0\PlanIT.DataAccess.pdb
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.DataAccess\bin\Debug\net9.0\PlanIT.Domain.dll
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.DataAccess\bin\Debug\net9.0\PlanIT.Domain.pdb
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.DataAccess\obj\Debug\net9.0\PlanIT.DataAccess.csproj.AssemblyReference.cache
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.DataAccess\obj\Debug\net9.0\PlanIT.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.DataAccess\obj\Debug\net9.0\PlanIT.DataAccess.AssemblyInfoInputs.cache
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.DataAccess\obj\Debug\net9.0\PlanIT.DataAccess.AssemblyInfo.cs
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.DataAccess\obj\Debug\net9.0\PlanIT.DataAccess.csproj.CoreCompileInputs.cache
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.DataAccess\obj\Debug\net9.0\PlanIT.DataAccess.sourcelink.json
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.DataAccess\obj\Debug\net9.0\PlanIT.D.15FB15C0.Up2Date
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.DataAccess\obj\Debug\net9.0\PlanIT.DataAccess.dll
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.DataAccess\obj\Debug\net9.0\refint\PlanIT.DataAccess.dll
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.DataAccess\obj\Debug\net9.0\PlanIT.DataAccess.pdb
+D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.DataAccess\obj\Debug\net9.0\ref\PlanIT.DataAccess.dll

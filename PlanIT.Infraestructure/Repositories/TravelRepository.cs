@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using PlanIT.Domain;
-using PlanIT.DataAccess.Interfaces; // Implementa la Interfaz (Contrato) ---> "ITravelRepository"
+using PlanIT.Domain.Interfaces; // Implementa la Interfaz (Contrato) ---> "ITravelRepository"
 using PlanIT.Infraestructure.Data; // Depende del DbContext ---> "PlanITDbContext"
 
 namespace PlanIT.Infraestructure.Repositories
