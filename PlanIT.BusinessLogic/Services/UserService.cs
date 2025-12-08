@@ -4,6 +4,7 @@ using PlanIT.Domain;
 using PlanIT.Domain.Interfaces;
 using System;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 
 namespace PlanIT.BusinessLogic.Services
 {
@@ -12,13 +13,15 @@ namespace PlanIT.BusinessLogic.Services
         private readonly IUserRepository _userRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IJwtProvider _jwtProvider;
+        private readonly IEmailService _emailService;
 
 
-        public UserService(IUserRepository userRepository, IUnitOfWork unitOfWork, IJwtProvider JwtProvider)
+        public UserService(IUserRepository userRepository, IUnitOfWork unitOfWork, IJwtProvider JwtProvider, IEmailService emailService)
         {
             _userRepository = userRepository;
             _unitOfWork = unitOfWork;
             _jwtProvider = JwtProvider;
+            _emailService = emailService;
         }
 
         public async Task RegisterAsync(UserRegisterDto dto)
@@ -60,6 +63,37 @@ namespace PlanIT.BusinessLogic.Services
             string token = _jwtProvider.GenerateToken(user);
             
             return token;
+        }
+
+        // Implementación de los nuevos métodos para el restablecimiento de contraseña
+        public async Task RequestPasswordResetAsync(ForgotPasswordDto dto)
+        {
+            var user = await _userRepository.GetUserByEmailAsync(dto.Email);
+            if (user == null)
+                throw new ArgumentException("El email no está registrado");
+
+            // Generar un token 
+            var token = Convert.ToHexString(RandomNumberGenerator.GetBytes(64));
+            user.PasswordResetToken = token;
+            user.PasswordResetExpires = DateTime.UtcNow.AddHours(1); // Token por 1 hora
+            
+            await _unitOfWork.SaveChangesAsync();
+
+            await _emailService.SendPasswordResetEmailAsync(user.Email, token);
+        }
+
+        public async Task ResetPasswordAsync(ResetPasswordDto dto)
+        {
+            var user = await _userRepository.GetUserByEmailAsync(dto.Email);
+            if (user == null || user.PasswordResetToken != dto.Token || user.PasswordResetExpires < DateTime.UtcNow)
+                throw new ArgumentException("Token inválido o expirado.");
+
+            // Hashear la nueva contraseña
+            user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.NewPassword);
+            user.PasswordResetToken = null;
+            user.PasswordResetExpires = null;
+
+            await _unitOfWork.SaveChangesAsync();
         }
     }
 }

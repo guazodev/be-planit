@@ -48,7 +48,7 @@ builder.Services.AddDbContext<PlanITDbContext>(options =>
 
 // ===========================================================================================================================
 // 3. Registros de DEPENDENCIAS (Inyeccion de Control)
-// Contrato entre capas: BusinessLogic <-> DataAccess -----> Implementacion (Infraestructure/BusinessLogic)
+// Contrato entre capas: Definición de Contratos (Domain) -----> Implementación (Infrastructure / BusinessLogic). Domain define las interfaces (IUserRepository, IUnitOfWork).
 // ===========================================================================================================================
 
 builder.Services.AddScoped<ITravelRepository, TravelRepository>();
@@ -85,7 +85,7 @@ builder.Services.AddAuthorization(); // Necesario para .RequireAuthorization()
 
 builder.Services.AddScoped<IApiIntegrationService, FakeApiIntegrationService>();
 builder.Services.AddScoped<IIaAssistantService, FakeIaAssistantService>();
-
+builder.Services.AddScoped<IEmailService, FakeEmailService>();
 
 
 // ===========================================================================================================================
@@ -155,6 +155,37 @@ app.MapGet("/api/travels/user/{userId:guid}", async (
 })
 .WithName("GetUserTravels")
 .RequireAuthorization();
+
+// Reset de Password - nuevos endpoints
+app.MapPost("/api/auth/forgot-password", async (
+    ForgotPasswordDto dto,
+    IUserService userService) =>
+{
+    await userService.RequestPasswordResetAsync(dto);
+    return Results.Ok(new { message = "Si el email está registrado, se ha enviado una instrucción para resetear la contraseña." });
+});
+
+// Ejecución del reset de password
+app.MapPost("/api/auth/reset-password", async (
+    ResetPasswordDto dto,
+    IUserService userService) =>
+{
+    try
+    {
+        await userService.ResetPasswordAsync(dto);
+        return Results.Ok(new { message = "Contraseña reseteada exitosamente." });
+    }
+    catch (ArgumentException ex)
+    {
+        return Results.BadRequest(new { message = ex.Message });
+    }
+    catch (Exception ex)
+    {
+        return Results.Problem("Ocurrió un error inesperado: " + ex.Message);
+    }
+});
+
+
 
 // ENDPOINT POST: Registro Usuario
 app.MapPost("/api/auth/register", async (
@@ -233,5 +264,20 @@ public class FakeIaAssistantService : IIaAssistantService
     public Task<string> GenerateItineraryJsonAsync(Travel travel, IEnumerable<PlanIT.DataAccess.Interfaces.ApiPlaceDetail> placeDetails)
     {
         throw new NotImplementedException();
+    }
+}
+
+public class FakeEmailService : IEmailService
+{
+    private readonly ILogger<FakeEmailService> _logger;
+    public FakeEmailService(ILogger<FakeEmailService> logger)
+    {
+        _logger = logger;
+    }
+    public async Task SendPasswordResetEmailAsync(string toEmail, string resetToken)
+    {
+        // Simular el envío de correo electrónico
+        _logger.LogInformation($"Simulando el envío de correo a {toEmail} con el token de reseteo: {resetToken}");
+        await Task.CompletedTask;
     }
 }

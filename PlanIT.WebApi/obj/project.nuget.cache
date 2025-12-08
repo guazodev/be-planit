@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VKxxYIVILqU=",
+  "dgSpecHash": "dFoKi6AmnY4=",
   "success": true,
-  "projectFilePath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.WebAPi\\PlanIT.WebApi.csproj",
+  "projectFilePath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.WebApi\\PlanIT.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuario\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

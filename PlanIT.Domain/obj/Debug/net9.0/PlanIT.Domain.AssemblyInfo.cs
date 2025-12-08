@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PlanIT.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bab24ffbcc6e54f68f24c059c51543160e992d61")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43b3a222acf6e07fc421366c88ee4dc99310ad7f")]
 [assembly: System.Reflection.AssemblyProductAttribute("PlanIT.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PlanIT.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
