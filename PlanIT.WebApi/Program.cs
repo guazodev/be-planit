@@ -5,12 +5,11 @@ using PlanIT.BusinessLogic.Services;
 using PlanIT.DataAccess.Interfaces;
 using PlanIT.Domain;
 using PlanIT.Domain.Interfaces;
-using PlanIT.Infraestructure.Data;
-using PlanIT.Infraestructure.Repositories;
+using PlanIT.Infrastructure.Data;
 using PlanIT.BusinessLogic.DTOs;
 using PlanIT.Infrastructure.Repositories; // Aca está la clase de UserRepository, casi me mareo
 // Importaciones para Token
-using PlanIT.Infraestructure.Authentication;
+using PlanIT.Infrastructure.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
@@ -42,9 +41,12 @@ builder.Services.AddCors(options =>
 // 2. Infraestruture Setup (Capa de Infraestructura)
 // ===========================================================================================================================
 
-var connectionString = builder.Configuration.GetConnectionString("PlanITDbConnection") ?? throw new InvalidOperationException("Connection string 'PlanITDbConnection' not found.");
+var connectionString = builder.Configuration.GetConnectionString("PlanITDbConnection")
+    ?? throw new InvalidOperationException("Connection string not found.");
+
+// CAMBIO ACA: UseNpgsql
 builder.Services.AddDbContext<PlanITDbContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseNpgsql(connectionString));
 
 // ===========================================================================================================================
 // 3. Registros de DEPENDENCIAS (Inyeccion de Control)
