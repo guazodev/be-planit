@@ -1,4 +1,4 @@
-@PlanIT.WebApi_HostAddress = http://localhost:5290
+@PlanIT.WebApi_HostAddress = http://localhost:5219
 
 GET {{PlanIT.WebApi_HostAddress}}/weatherforecast/
 Accept: application/json

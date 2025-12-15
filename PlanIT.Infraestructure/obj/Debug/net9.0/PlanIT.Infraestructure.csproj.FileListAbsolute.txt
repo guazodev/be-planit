@@ -41,3 +41,25 @@ D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.Infrae
 D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.Infraestructure\obj\Debug\net9.0\PlanIT.Infraestructure.pdb
 D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.Infraestructure\obj\Debug\net9.0\PlanIT.Infraestructure.genruntimeconfig.cache
 D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.Infraestructure\obj\Debug\net9.0\ref\PlanIT.Infraestructure.dll
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.Infraestructure\bin\Debug\net9.0\PlanIT.Infraestructure.deps.json
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.Infraestructure\bin\Debug\net9.0\PlanIT.Infraestructure.runtimeconfig.json
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.Infraestructure\bin\Debug\net9.0\PlanIT.Infraestructure.dll
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.Infraestructure\bin\Debug\net9.0\PlanIT.Infraestructure.pdb
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.Infraestructure\bin\Debug\net9.0\PlanIT.BusinessLogic.dll
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.Infraestructure\bin\Debug\net9.0\PlanIT.DataAccess.dll
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.Infraestructure\bin\Debug\net9.0\PlanIT.Domain.dll
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.Infraestructure\bin\Debug\net9.0\PlanIT.BusinessLogic.pdb
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.Infraestructure\bin\Debug\net9.0\PlanIT.DataAccess.pdb
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.Infraestructure\bin\Debug\net9.0\PlanIT.Domain.pdb
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.Infraestructure\obj\Debug\net9.0\PlanIT.Infraestructure.csproj.AssemblyReference.cache
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.Infraestructure\obj\Debug\net9.0\PlanIT.Infraestructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.Infraestructure\obj\Debug\net9.0\PlanIT.Infraestructure.AssemblyInfoInputs.cache
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.Infraestructure\obj\Debug\net9.0\PlanIT.Infraestructure.AssemblyInfo.cs
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.Infraestructure\obj\Debug\net9.0\PlanIT.Infraestructure.csproj.CoreCompileInputs.cache
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.Infraestructure\obj\Debug\net9.0\PlanIT.Infraestructure.sourcelink.json
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.Infraestructure\obj\Debug\net9.0\PlanIT.I.8F25A387.Up2Date
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.Infraestructure\obj\Debug\net9.0\PlanIT.Infraestructure.dll
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.Infraestructure\obj\Debug\net9.0\refint\PlanIT.Infraestructure.dll
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.Infraestructure\obj\Debug\net9.0\PlanIT.Infraestructure.pdb
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.Infraestructure\obj\Debug\net9.0\PlanIT.Infraestructure.genruntimeconfig.cache
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.Infraestructure\obj\Debug\net9.0\ref\PlanIT.Infraestructure.dll

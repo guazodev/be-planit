@@ -29,3 +29,19 @@ D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.DataAc
 D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.DataAccess\obj\Debug\net9.0\refint\PlanIT.DataAccess.dll
 D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.DataAccess\obj\Debug\net9.0\PlanIT.DataAccess.pdb
 D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.DataAccess\obj\Debug\net9.0\ref\PlanIT.DataAccess.dll
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.dataaccess\bin\Debug\net9.0\PlanIT.DataAccess.deps.json
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.dataaccess\bin\Debug\net9.0\PlanIT.DataAccess.dll
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.dataaccess\bin\Debug\net9.0\PlanIT.DataAccess.pdb
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.dataaccess\bin\Debug\net9.0\PlanIT.Domain.dll
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.dataaccess\bin\Debug\net9.0\PlanIT.Domain.pdb
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.dataaccess\obj\Debug\net9.0\PlanIT.DataAccess.csproj.AssemblyReference.cache
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.dataaccess\obj\Debug\net9.0\PlanIT.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.dataaccess\obj\Debug\net9.0\PlanIT.DataAccess.AssemblyInfoInputs.cache
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.dataaccess\obj\Debug\net9.0\PlanIT.DataAccess.AssemblyInfo.cs
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.dataaccess\obj\Debug\net9.0\PlanIT.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.dataaccess\obj\Debug\net9.0\PlanIT.DataAccess.sourcelink.json
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.dataaccess\obj\Debug\net9.0\PlanIT.D.15FB15C0.Up2Date
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.dataaccess\obj\Debug\net9.0\PlanIT.DataAccess.dll
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.dataaccess\obj\Debug\net9.0\refint\PlanIT.DataAccess.dll
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.dataaccess\obj\Debug\net9.0\PlanIT.DataAccess.pdb
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.dataaccess\obj\Debug\net9.0\ref\PlanIT.DataAccess.dll

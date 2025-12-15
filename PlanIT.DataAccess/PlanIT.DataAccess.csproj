@@ -10,4 +10,10 @@
     <ProjectReference Include="..\PlanIT.Domain\PlanIT.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.66" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.1" />
+    <PackageReference Include="Npgsql" Version="10.0.0" />
+  </ItemGroup>
+
 </Project>

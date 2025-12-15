@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "dSu8A410O8g=",
+  "dgSpecHash": "eH/CzcZUMhc=",
   "success": true,
-  "projectFilePath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.DataAccess\\PlanIT.DataAccess.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.dataaccess\\PlanIT.DataAccess.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\nikes\\.nuget\\packages\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",
+    "C:\\Users\\nikes\\.nuget\\packages\\microsoft.extensions.configuration\\10.0.1\\microsoft.extensions.configuration.10.0.1.nupkg.sha512",
+    "C:\\Users\\nikes\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\10.0.1\\microsoft.extensions.configuration.abstractions.10.0.1.nupkg.sha512",
+    "C:\\Users\\nikes\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.0\\microsoft.extensions.dependencyinjection.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\nikes\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\9.0.0\\microsoft.extensions.logging.abstractions.9.0.0.nupkg.sha512",
+    "C:\\Users\\nikes\\.nuget\\packages\\microsoft.extensions.primitives\\10.0.1\\microsoft.extensions.primitives.10.0.1.nupkg.sha512",
+    "C:\\Users\\nikes\\.nuget\\packages\\npgsql\\10.0.0\\npgsql.10.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

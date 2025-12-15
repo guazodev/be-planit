@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.WebApi\\PlanIT.WebApi.csproj": {}
+    "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.WebApi\\PlanIT.WebApi.csproj": {}
   },
   "projects": {
-    "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.BusinessLogic\\PlanIT.BusinessLogic.csproj": {
+    "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.BusinessLogic\\PlanIT.BusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.BusinessLogic\\PlanIT.BusinessLogic.csproj",
+        "projectUniqueName": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.BusinessLogic\\PlanIT.BusinessLogic.csproj",
         "projectName": "PlanIT.BusinessLogic",
-        "projectPath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.BusinessLogic\\PlanIT.BusinessLogic.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.BusinessLogic\\obj\\",
+        "projectPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.BusinessLogic\\PlanIT.BusinessLogic.csproj",
+        "packagesPath": "C:\\Users\\nikes\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.BusinessLogic\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nikes\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,11 +32,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.DataAccess\\PlanIT.DataAccess.csproj": {
-                "projectPath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.DataAccess\\PlanIT.DataAccess.csproj"
+              "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.dataaccess\\PlanIT.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.dataaccess\\PlanIT.DataAccess.csproj"
               },
-              "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.Domain\\PlanIT.Domain.csproj": {
-                "projectPath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.Domain\\PlanIT.Domain.csproj"
+              "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.domain\\PlanIT.Domain.csproj": {
+                "projectPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.domain\\PlanIT.Domain.csproj"
               }
             }
           }
@@ -82,20 +82,20 @@
         }
       }
     },
-    "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.DataAccess\\PlanIT.DataAccess.csproj": {
+    "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.dataaccess\\PlanIT.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.DataAccess\\PlanIT.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.dataaccess\\PlanIT.DataAccess.csproj",
         "projectName": "PlanIT.DataAccess",
-        "projectPath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.DataAccess\\PlanIT.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.DataAccess\\obj\\",
+        "projectPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.dataaccess\\PlanIT.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\nikes\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.dataaccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nikes\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -110,8 +110,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.Domain\\PlanIT.Domain.csproj": {
-                "projectPath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.Domain\\PlanIT.Domain.csproj"
+              "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.domain\\PlanIT.Domain.csproj": {
+                "projectPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.domain\\PlanIT.Domain.csproj"
               }
             }
           }
@@ -131,6 +131,20 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.66, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -151,20 +165,20 @@
         }
       }
     },
-    "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.Domain\\PlanIT.Domain.csproj": {
+    "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.domain\\PlanIT.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.Domain\\PlanIT.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.domain\\PlanIT.Domain.csproj",
         "projectName": "PlanIT.Domain",
-        "projectPath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.Domain\\PlanIT.Domain.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.Domain\\obj\\",
+        "projectPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.domain\\PlanIT.Domain.csproj",
+        "packagesPath": "C:\\Users\\nikes\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nikes\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -216,20 +230,20 @@
         }
       }
     },
-    "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.Infraestructure\\PlanIT.Infraestructure.csproj": {
+    "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.Infraestructure\\PlanIT.Infraestructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.Infraestructure\\PlanIT.Infraestructure.csproj",
+        "projectUniqueName": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.Infraestructure\\PlanIT.Infraestructure.csproj",
         "projectName": "PlanIT.Infraestructure",
-        "projectPath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.Infraestructure\\PlanIT.Infraestructure.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.Infraestructure\\obj\\",
+        "projectPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.Infraestructure\\PlanIT.Infraestructure.csproj",
+        "packagesPath": "C:\\Users\\nikes\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.Infraestructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nikes\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -244,14 +258,14 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.BusinessLogic\\PlanIT.BusinessLogic.csproj": {
-                "projectPath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.BusinessLogic\\PlanIT.BusinessLogic.csproj"
+              "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.BusinessLogic\\PlanIT.BusinessLogic.csproj": {
+                "projectPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.BusinessLogic\\PlanIT.BusinessLogic.csproj"
               },
-              "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.DataAccess\\PlanIT.DataAccess.csproj": {
-                "projectPath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.DataAccess\\PlanIT.DataAccess.csproj"
+              "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.dataaccess\\PlanIT.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.dataaccess\\PlanIT.DataAccess.csproj"
               },
-              "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.Domain\\PlanIT.Domain.csproj": {
-                "projectPath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.Domain\\PlanIT.Domain.csproj"
+              "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.domain\\PlanIT.Domain.csproj": {
+                "projectPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.domain\\PlanIT.Domain.csproj"
               }
             }
           }
@@ -307,20 +321,20 @@
         }
       }
     },
-    "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.WebApi\\PlanIT.WebApi.csproj": {
+    "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.WebApi\\PlanIT.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.WebApi\\PlanIT.WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.WebApi\\PlanIT.WebApi.csproj",
         "projectName": "PlanIT.WebApi",
-        "projectPath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.WebApi\\PlanIT.WebApi.csproj",
-        "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-        "outputPath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.WebApi\\obj\\",
+        "projectPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.WebApi\\PlanIT.WebApi.csproj",
+        "packagesPath": "C:\\Users\\nikes\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nikes\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -335,11 +349,17 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.BusinessLogic\\PlanIT.BusinessLogic.csproj": {
-                "projectPath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.BusinessLogic\\PlanIT.BusinessLogic.csproj"
+              "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.BusinessLogic\\PlanIT.BusinessLogic.csproj": {
+                "projectPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.BusinessLogic\\PlanIT.BusinessLogic.csproj"
               },
-              "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.Infraestructure\\PlanIT.Infraestructure.csproj": {
-                "projectPath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.Infraestructure\\PlanIT.Infraestructure.csproj"
+              "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.dataaccess\\PlanIT.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.dataaccess\\PlanIT.DataAccess.csproj"
+              },
+              "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.domain\\PlanIT.Domain.csproj": {
+                "projectPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.domain\\PlanIT.Domain.csproj"
+              },
+              "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.Infraestructure\\PlanIT.Infraestructure.csproj": {
+                "projectPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.Infraestructure\\PlanIT.Infraestructure.csproj"
               }
             }
           }
@@ -362,17 +382,33 @@
           "dependencies": {
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.*, )"
             },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
+            "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.10, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.*, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[8.15.0, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.*, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[9.0.6, )"
+              "version": "[6.5.0, )"
             }
           },
           "imports": [

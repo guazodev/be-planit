@@ -8,23 +8,23 @@
     "net9.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Usuario\\.nuget\\packages\\": {},
+    "C:\\Users\\nikes\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.Domain\\PlanIT.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.Domain\\PlanIT.Domain.csproj",
       "projectName": "PlanIT.Domain",
-      "projectPath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.Domain\\PlanIT.Domain.csproj",
-      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.Domain\\obj\\",
+      "projectPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.Domain\\PlanIT.Domain.csproj",
+      "packagesPath": "C:\\Users\\nikes\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nikes\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

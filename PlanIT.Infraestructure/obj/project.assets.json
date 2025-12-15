@@ -60,6 +60,19 @@
           }
         }
       },
+      "Dapper/2.1.66": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Dapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -646,10 +659,30 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.Extensions.Configuration.Abstractions/9.0.10": {
+      "Microsoft.Extensions.Configuration/10.0.1": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.Primitives": "9.0.10"
+          "Microsoft.Extensions.Configuration.Abstractions": "10.0.1",
+          "Microsoft.Extensions.Primitives": "10.0.1"
+        },
+        "compile": {
+          "lib/net9.0/Microsoft.Extensions.Configuration.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.Extensions.Configuration.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Configuration.Abstractions/10.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "10.0.1"
         },
         "compile": {
           "lib/net9.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
@@ -776,7 +809,7 @@
           "buildTransitive/net8.0/Microsoft.Extensions.Options.targets": {}
         }
       },
-      "Microsoft.Extensions.Primitives/9.0.10": {
+      "Microsoft.Extensions.Primitives/10.0.1": {
         "type": "package",
         "compile": {
           "lib/net9.0/Microsoft.Extensions.Primitives.dll": {
@@ -992,6 +1025,22 @@
         },
         "build": {
           "buildTransitive/Mono.TextTemplating.targets": {}
+        }
+      },
+      "Npgsql/10.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.0"
+        },
+        "compile": {
+          "lib/net9.0/Npgsql.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/Npgsql.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.ClientModel/1.0.0": {
@@ -1631,6 +1680,9 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
+          "Dapper": "2.1.66",
+          "Microsoft.Extensions.Configuration": "10.0.1",
+          "Npgsql": "10.0.0",
           "PlanIT.Domain": "1.0.0"
         },
         "compile": {
@@ -1719,6 +1771,25 @@
         "lib/netstandard2.0/BCrypt.Net-Next.xml",
         "lib/netstandard2.1/BCrypt.Net-Next.dll",
         "lib/netstandard2.1/BCrypt.Net-Next.xml",
+        "readme.md"
+      ]
+    },
+    "Dapper/2.1.66": {
+      "sha512": "/q77jUgDOS+bzkmk3Vy9SiWMaetTw+NOoPAV0xPBsGVAyljd5S6P+4RUW7R3ZUGGr9lDRyPKgAMj2UAOwvqZYw==",
+      "type": "package",
+      "path": "dapper/2.1.66",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Dapper.png",
+        "dapper.2.1.66.nupkg.sha512",
+        "dapper.nuspec",
+        "lib/net461/Dapper.dll",
+        "lib/net461/Dapper.xml",
+        "lib/net8.0/Dapper.dll",
+        "lib/net8.0/Dapper.xml",
+        "lib/netstandard2.0/Dapper.dll",
+        "lib/netstandard2.0/Dapper.xml",
         "readme.md"
       ]
     },
@@ -3039,21 +3110,51 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.Configuration.Abstractions/9.0.10": {
-      "sha512": "ad3JxmFj0uxuFa1CT6oxTCC1lQ0xeRuOvzBRFT/I/ofIXVOnNsH/v2GZkAJWhlpZqKUvSexQZzp3EEAB2CdtJg==",
+    "Microsoft.Extensions.Configuration/10.0.1": {
+      "sha512": "njoRekyMIK+smav8B6KL2YgIfUtlsRNuT7wvurpLW+m/hoRKVnoELk2YxnUnWRGScCd1rukLMxShwLqEOKowDg==",
       "type": "package",
-      "path": "microsoft.extensions.configuration.abstractions/9.0.10",
+      "path": "microsoft.extensions.configuration/10.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Configuration.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Configuration.targets",
+        "lib/net10.0/Microsoft.Extensions.Configuration.dll",
+        "lib/net10.0/Microsoft.Extensions.Configuration.xml",
+        "lib/net462/Microsoft.Extensions.Configuration.dll",
+        "lib/net462/Microsoft.Extensions.Configuration.xml",
+        "lib/net8.0/Microsoft.Extensions.Configuration.dll",
+        "lib/net8.0/Microsoft.Extensions.Configuration.xml",
+        "lib/net9.0/Microsoft.Extensions.Configuration.dll",
+        "lib/net9.0/Microsoft.Extensions.Configuration.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.xml",
+        "microsoft.extensions.configuration.10.0.1.nupkg.sha512",
+        "microsoft.extensions.configuration.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Configuration.Abstractions/10.0.1": {
+      "sha512": "kPlU11hql+L9RjrN2N9/0GcRcRcZrNFlLLjadasFWeBORT6pL6OE+RYRk90GGCyVGSxTK+e1/f3dsMj5zpFFiQ==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration.abstractions/10.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/Microsoft.Extensions.Configuration.Abstractions.targets",
         "buildTransitive/net462/_._",
         "buildTransitive/net8.0/_._",
         "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Configuration.Abstractions.targets",
+        "lib/net10.0/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "lib/net10.0/Microsoft.Extensions.Configuration.Abstractions.xml",
         "lib/net462/Microsoft.Extensions.Configuration.Abstractions.dll",
         "lib/net462/Microsoft.Extensions.Configuration.Abstractions.xml",
         "lib/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll",
@@ -3062,7 +3163,7 @@
         "lib/net9.0/Microsoft.Extensions.Configuration.Abstractions.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.xml",
-        "microsoft.extensions.configuration.abstractions.9.0.10.nupkg.sha512",
+        "microsoft.extensions.configuration.abstractions.10.0.1.nupkg.sha512",
         "microsoft.extensions.configuration.abstractions.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -3301,21 +3402,22 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.Primitives/9.0.10": {
-      "sha512": "3pl8D1O5ZwMpDkZAT2uXrhQ6NipkwEgDLMFuURiHTf72TvkoMP61QYH3Vk1yrzVHnHBdNZk3cQACz8Zc7YGNhQ==",
+    "Microsoft.Extensions.Primitives/10.0.1": {
+      "sha512": "DO8XrJkp5x4PddDuc/CH37yDBCs9BYN6ijlKyR3vMb55BP1Vwh90vOX8bNfnKxr5B2qEI3D8bvbY1fFbDveDHQ==",
       "type": "package",
-      "path": "microsoft.extensions.primitives/9.0.10",
+      "path": "microsoft.extensions.primitives/10.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "Icon.png",
-        "LICENSE.TXT",
         "PACKAGE.md",
         "THIRD-PARTY-NOTICES.TXT",
         "buildTransitive/net461/Microsoft.Extensions.Primitives.targets",
         "buildTransitive/net462/_._",
         "buildTransitive/net8.0/_._",
         "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Primitives.targets",
+        "lib/net10.0/Microsoft.Extensions.Primitives.dll",
+        "lib/net10.0/Microsoft.Extensions.Primitives.xml",
         "lib/net462/Microsoft.Extensions.Primitives.dll",
         "lib/net462/Microsoft.Extensions.Primitives.xml",
         "lib/net8.0/Microsoft.Extensions.Primitives.dll",
@@ -3324,7 +3426,7 @@
         "lib/net9.0/Microsoft.Extensions.Primitives.xml",
         "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll",
         "lib/netstandard2.0/Microsoft.Extensions.Primitives.xml",
-        "microsoft.extensions.primitives.9.0.10.nupkg.sha512",
+        "microsoft.extensions.primitives.10.0.1.nupkg.sha512",
         "microsoft.extensions.primitives.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -3596,6 +3698,25 @@
         "mono.texttemplating.3.0.0.nupkg.sha512",
         "mono.texttemplating.nuspec",
         "readme.md"
+      ]
+    },
+    "Npgsql/10.0.0": {
+      "sha512": "xZAYhPOU2rUIFpV48xsqhCx9vXs6Y+0jX2LCoSEfDFYMw9jtAOUk3iQsCnDLrFIv9NT3JGMihn7nnuZsPKqJmA==",
+      "type": "package",
+      "path": "npgsql/10.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net10.0/Npgsql.dll",
+        "lib/net10.0/Npgsql.xml",
+        "lib/net8.0/Npgsql.dll",
+        "lib/net8.0/Npgsql.xml",
+        "lib/net9.0/Npgsql.dll",
+        "lib/net9.0/Npgsql.xml",
+        "npgsql.10.0.0.nupkg.sha512",
+        "npgsql.nuspec",
+        "postgresql.png"
       ]
     },
     "System.ClientModel/1.0.0": {
@@ -4791,13 +4912,13 @@
     },
     "PlanIT.DataAccess/1.0.0": {
       "type": "project",
-      "path": "../PlanIT.DataAccess/PlanIT.DataAccess.csproj",
-      "msbuildProject": "../PlanIT.DataAccess/PlanIT.DataAccess.csproj"
+      "path": "../planit.dataaccess/PlanIT.DataAccess.csproj",
+      "msbuildProject": "../planit.dataaccess/PlanIT.DataAccess.csproj"
     },
     "PlanIT.Domain/1.0.0": {
       "type": "project",
-      "path": "../PlanIT.Domain/PlanIT.Domain.csproj",
-      "msbuildProject": "../PlanIT.Domain/PlanIT.Domain.csproj"
+      "path": "../planit.domain/PlanIT.Domain.csproj",
+      "msbuildProject": "../planit.domain/PlanIT.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4811,23 +4932,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Usuario\\.nuget\\packages\\": {},
+    "C:\\Users\\nikes\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.Infraestructure\\PlanIT.Infraestructure.csproj",
+      "projectUniqueName": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.Infraestructure\\PlanIT.Infraestructure.csproj",
       "projectName": "PlanIT.Infraestructure",
-      "projectPath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.Infraestructure\\PlanIT.Infraestructure.csproj",
-      "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
-      "outputPath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.Infraestructure\\obj\\",
+      "projectPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.Infraestructure\\PlanIT.Infraestructure.csproj",
+      "packagesPath": "C:\\Users\\nikes\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.Infraestructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nikes\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4842,14 +4963,14 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.BusinessLogic\\PlanIT.BusinessLogic.csproj": {
-              "projectPath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.BusinessLogic\\PlanIT.BusinessLogic.csproj"
+            "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.BusinessLogic\\PlanIT.BusinessLogic.csproj": {
+              "projectPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\PlanIT.BusinessLogic\\PlanIT.BusinessLogic.csproj"
             },
-            "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.DataAccess\\PlanIT.DataAccess.csproj": {
-              "projectPath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.DataAccess\\PlanIT.DataAccess.csproj"
+            "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.dataaccess\\PlanIT.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.dataaccess\\PlanIT.DataAccess.csproj"
             },
-            "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.Domain\\PlanIT.Domain.csproj": {
-              "projectPath": "D:\\Usuario\\Desktop\\Dev\\Devlights\\Bootcamp4\\Trabajo Final\\be-planit\\PlanIT.Domain\\PlanIT.Domain.csproj"
+            "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.domain\\PlanIT.Domain.csproj": {
+              "projectPath": "C:\\Users\\nikes\\Desktop\\DEV\\back\\be-planit\\planit.domain\\PlanIT.Domain.csproj"
             }
           }
         }

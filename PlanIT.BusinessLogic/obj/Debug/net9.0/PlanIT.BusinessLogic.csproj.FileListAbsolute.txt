@@ -33,3 +33,21 @@ D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.Busine
 D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.BusinessLogic\obj\Debug\net9.0\refint\PlanIT.BusinessLogic.dll
 D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.BusinessLogic\obj\Debug\net9.0\PlanIT.BusinessLogic.pdb
 D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.BusinessLogic\obj\Debug\net9.0\ref\PlanIT.BusinessLogic.dll
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.BusinessLogic\bin\Debug\net9.0\PlanIT.BusinessLogic.deps.json
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.BusinessLogic\bin\Debug\net9.0\PlanIT.BusinessLogic.dll
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.BusinessLogic\bin\Debug\net9.0\PlanIT.BusinessLogic.pdb
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.BusinessLogic\bin\Debug\net9.0\PlanIT.DataAccess.dll
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.BusinessLogic\bin\Debug\net9.0\PlanIT.Domain.dll
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.BusinessLogic\bin\Debug\net9.0\PlanIT.DataAccess.pdb
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.BusinessLogic\bin\Debug\net9.0\PlanIT.Domain.pdb
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.BusinessLogic\obj\Debug\net9.0\PlanIT.BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.BusinessLogic\obj\Debug\net9.0\PlanIT.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.BusinessLogic\obj\Debug\net9.0\PlanIT.BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.BusinessLogic\obj\Debug\net9.0\PlanIT.BusinessLogic.AssemblyInfo.cs
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.BusinessLogic\obj\Debug\net9.0\PlanIT.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.BusinessLogic\obj\Debug\net9.0\PlanIT.BusinessLogic.sourcelink.json
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.BusinessLogic\obj\Debug\net9.0\PlanIT.B.E3EB24FD.Up2Date
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.BusinessLogic\obj\Debug\net9.0\PlanIT.BusinessLogic.dll
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.BusinessLogic\obj\Debug\net9.0\refint\PlanIT.BusinessLogic.dll
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.BusinessLogic\obj\Debug\net9.0\PlanIT.BusinessLogic.pdb
+C:\Users\nikes\Desktop\DEV\back\be-planit\PlanIT.BusinessLogic\obj\Debug\net9.0\ref\PlanIT.BusinessLogic.dll

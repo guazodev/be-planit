@@ -21,3 +21,15 @@ D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.Domain
 D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.Domain\obj\Debug\net9.0\refint\PlanIT.Domain.dll
 D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.Domain\obj\Debug\net9.0\PlanIT.Domain.pdb
 D:\Usuario\Desktop\Dev\Devlights\Bootcamp4\Trabajo Final\be-planit\PlanIT.Domain\obj\Debug\net9.0\ref\PlanIT.Domain.dll
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.domain\bin\Debug\net9.0\PlanIT.Domain.deps.json
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.domain\bin\Debug\net9.0\PlanIT.Domain.dll
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.domain\bin\Debug\net9.0\PlanIT.Domain.pdb
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.domain\obj\Debug\net9.0\PlanIT.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.domain\obj\Debug\net9.0\PlanIT.Domain.AssemblyInfoInputs.cache
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.domain\obj\Debug\net9.0\PlanIT.Domain.AssemblyInfo.cs
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.domain\obj\Debug\net9.0\PlanIT.Domain.csproj.CoreCompileInputs.cache
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.domain\obj\Debug\net9.0\PlanIT.Domain.sourcelink.json
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.domain\obj\Debug\net9.0\PlanIT.Domain.dll
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.domain\obj\Debug\net9.0\refint\PlanIT.Domain.dll
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.domain\obj\Debug\net9.0\PlanIT.Domain.pdb
+C:\Users\nikes\Desktop\DEV\back\be-planit\planit.domain\obj\Debug\net9.0\ref\PlanIT.Domain.dll

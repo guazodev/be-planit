@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PlanIT.Infraestructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43b3a222acf6e07fc421366c88ee4dc99310ad7f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+61b4820cd2a467268f983c9ae567d8012cdcc878")]
 [assembly: System.Reflection.AssemblyProductAttribute("PlanIT.Infraestructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PlanIT.Infraestructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
