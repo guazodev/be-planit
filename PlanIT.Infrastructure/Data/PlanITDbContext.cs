@@ -13,9 +13,12 @@ namespace PlanIT.Infrastructure.Data
         public PlanITDbContext(DbContextOptions<PlanITDbContext> options) : base(options)
         {
         }
+
         public DbSet<Travel> Travels { get; set; }
 
+
         public DbSet<User> Users { get; set; }
+
 
 
         //Aca engau irian otros DbSet de otras entidades (Activities, etc)

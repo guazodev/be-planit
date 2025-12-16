@@ -19,6 +19,8 @@ namespace PlanIT.Domain
         public decimal EstimatedBudget { get; set; }
         public string TravelStyle { get; set; } = "Low Cost";
         public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
+        public string? ItineraryJson { get; set; }
+        public bool IsGenerated { get; set; }
 
         public Travel()
         {

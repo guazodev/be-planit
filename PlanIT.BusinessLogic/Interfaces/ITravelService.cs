@@ -13,5 +13,8 @@ namespace PlanIT.BusinessLogic.Interfaces
         Task<Travel> CreateTravelAsync(TravelCreationDto travel);
         Task<IEnumerable<Travel>> GetTravelsByUserIdAsync(Guid userId);
 
+
+        //Nuevo: 
+        Task<Travel> GenerateItineraryAsync(Guid travelId);
     }
 }

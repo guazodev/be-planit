@@ -5,27 +5,35 @@ using PlanIT.BusinessLogic.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using PlanIT.DataAccess.Interfaces;
+
 
 namespace PlanIT.BusinessLogic.Services
 {
     public class TravelService : ITravelService
     {
-        private readonly ITravelRepository _travelRepository;
         private readonly IUnitOfWork _unitOfWork;
-        
-        public TravelService(ITravelRepository travelRepository, IUnitOfWork unitOfWork)
+        private readonly ITravelRepository _travelRepository;
+
+        //las APIs
+        private readonly IApiIntegrationService _googleService;
+        private readonly IIaAssistantService _aiService;
+
+
+       public TravelService(
+            ITravelRepository travelRepository, 
+            IUnitOfWork unitOfWork,
+            IApiIntegrationService googleService, // Google Places
+            IIaAssistantService aiService)      // OpenAI
         {
             _travelRepository = travelRepository;
             _unitOfWork = unitOfWork;
+            _googleService = googleService;
+            _aiService = aiService;
         }
 
         public async Task<Travel> CreateTravelAsync(TravelCreationDto dto)
         {
-            // Validaciones (usando el DTO)
-            if (string.IsNullOrEmpty(dto.Destination) || dto.UserId == Guid.Empty)
-                throw new ArgumentException("El Destino y el ID de usuario son Obligatorios.");
-
-            // Crear la entiendad
             var travel = new Travel
             {
                 Id = Guid.NewGuid(),
@@ -34,6 +42,7 @@ namespace PlanIT.BusinessLogic.Services
                 DurationDays = dto.DurationDays,
                 EstimatedBudget = dto.EstimatedBudget,
                 TravelStyle = dto.TravelStyle,
+                // Nota: Los campos ItineraryJson e IsGenerated seran nulos/false por defecto
             };
             
             await _travelRepository.AddAsync(travel);
@@ -47,9 +56,34 @@ namespace PlanIT.BusinessLogic.Services
             return await _travelRepository.GetByUserIdAsync(userId);
         }
 
-        public Task<object?> GetUserTravelsAsync(Guid userId)
+        // =========================================================
+        // GENERAR ITINERARIO CON IA
+        // =========================================================
+        public async Task<Travel> GenerateItineraryAsync(Guid travelId)
         {
-            throw new NotImplementedException();
+            // A. Buscar el viaje en la base de datos
+            var travel = await _travelRepository.GetByIdAsync(travelId);
+            if (travel == null) 
+                throw new KeyNotFoundException($"Viaje con ID {travelId} no encontrado.");
+            
+            // B. ORQUESTACIÓN: De la Base de Datos a la API de Google
+            // Usamos el destino y estilo del viaje para encontrar puntos de interés reales.
+            var placesOfInterest = await _googleService.GetNearbyPointsOfInterestAsync(
+                travel.Destination, 
+                travel.TravelStyle);
+            
+            // C. ORQUESTACIÓN: De Google a la IA de OpenAI
+            // Pedimos a la IA que use esa información para crear un plan en formato JSON.
+            var itineraryJson = await _aiService.GenerateItineraryJsonAsync(travel, placesOfInterest);
+
+            // D. Guardar el resultado en PostgreSQL (columna JSONB)
+            travel.ItineraryJson = itineraryJson;
+            travel.IsGenerated = true;
+
+            _travelRepository.Update(travel);
+            await _unitOfWork.SaveChangesAsync();
+
+            return travel;
         }
     }
 }
