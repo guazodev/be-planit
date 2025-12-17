@@ -303,15 +303,31 @@ app.MapPost("/api/auth/register", async (
 })
 .WithName("RegisterUser");
 
-// ENDPOINT POST: Login User
+
+// ENDPOINT POST: Login User (Mejorado por Mati |B ) 
 app.MapPost("/api/auth/login", async (
     UserLoginDto dto,
-    IUserService userService) =>
+    IUserService userService,
+    IUserRepository userRepo) => // 1. Inyectamos el Repo para buscar al usuario
 {
     try
     {
+        // A. Obtenemos el Token 
         var token = await userService.LoginAsync(dto);
-        return Results.Ok(new { token = token }); // Devuelve el token
+
+        // B. Buscamos los datos del usuario usando su email
+        var user = await userRepo.GetByEmailAsync(dto.Email);
+
+        if (user == null)
+            return Results.BadRequest(new { message = "Usuario no encontrado." }); // Esto es por si el login tiro algun error o algo raro
+
+        // C. Devolvemos el Token Y el ID juntos
+        return Results.Ok(new
+        {
+            Token = token,
+            UserId = user.Id,   // ID ACA
+            Email = user.Email  // Email por las dudas xd
+        });
     }
     catch (ArgumentException ex)
     {
@@ -323,6 +339,7 @@ app.MapPost("/api/auth/login", async (
     }
 })
 .WithName("LoginUser");
+
 
 // ENDPOINT POST: Login con Google
 app.MapPost("/api/auth/google-login", async (
