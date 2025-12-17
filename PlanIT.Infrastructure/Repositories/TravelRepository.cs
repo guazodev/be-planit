@@ -16,30 +16,31 @@ namespace PlanIT.Infrastructure.Repositories
 
     public class TravelRepository : ITravelRepository
     {
-        private readonly PlanITDbContext _context;
+        private readonly PlanITDbContext _dbContext;
+     
 
-        public TravelRepository(PlanITDbContext context)
+        public TravelRepository(PlanITDbContext dbContext)
         {
-            _context = context;
+            _dbContext = dbContext;
         }
 
         // 1. Implementación de AddAsync
         // Erro que me daba: El nombre del metodo debe ser "AddAsync" para coincidir con el contrato.
         public async Task AddAsync(Travel travel)
         {
-            await _context.Travels.AddAsync(travel);
+            await _dbContext.Travels.AddAsync(travel);
         }
 
         // 2. Implementacion de GetByIdAsync
         public async Task<Travel?> GetByIdAsync(Guid id)
         {
-            return await _context.Travels.FindAsync(id);
+            return await _dbContext.Travels.FindAsync(id);
         }
 
         // 3. Implementacion de GetByUserIdAsync
         public async Task<IEnumerable<Travel>> GetByUserIdAsync(Guid userId)
         {
-            return await _context.Travels
+            return await _dbContext.Travels
                 .Where(t => t.UserId == userId)
                 .ToListAsync();
         }
@@ -47,7 +48,13 @@ namespace PlanIT.Infrastructure.Repositories
         // 4. Implementacion de SaveChangesAsync
         public async Task<int> SaveChangesAsync()
         {
-            return await _context.SaveChangesAsync();
+            return await _dbContext.SaveChangesAsync();
+        }
+
+        public void Update(Travel entity)
+        {
+            _dbContext.Travels.Update(entity);
+            // Nota: El SaveChanges lo hace el UnitOfWork, no el repositorio.
         }
     }
 }

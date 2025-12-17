@@ -20,4 +20,5 @@ public interface ITravelRepository
     Task AddAsync(Travel travel);
 
     Task<int> SaveChangesAsync();
+    void Update(Travel travel);
 }

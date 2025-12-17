@@ -14,6 +14,10 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
+//NUEVOS DE IA 
+using PlanIT.Infrastructure.Integrations;
+using Microsoft.Extensions.AI;
+using OpenAI;
 
 // ========================================================================================================================
 // 0. Builder, aca inicia la aplicacion 
@@ -114,11 +118,34 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddAuthorization(); // Necesario para .RequireAuthorization()
 
 // ===========================================================================================================================
-// Integraciones, FEIKS Jei, mientras tanto despues cambiamos 
+// INTEGRACIONES REALES (Google & OpenAI) 
+// ===========================================================================================================================
+
+var keyParaOpenAi = builder.Configuration["ApiKeys:OpenAI"]
+    ?? throw new InvalidOperationException("OpenAI Key no encontrada.");
+
+// 1. Instanciamos el cliente general
+OpenAI.OpenAIClient openAiClient = new(keyParaOpenAi);
+
+// 2. Obtenemos el cliente de Chat
+var openAiChatClient = openAiClient.GetChatClient("gpt-4o-mini");
+
+// 3. Conversión (CORREGIDO: Es .AsChatClient, sin la 'I')
+// Al usar la versión 2.1.0-beta.2, este método aparece mágicamente.
+IChatClient chatClient = Microsoft.Extensions.AI.OpenAIClientExtensions.AsIChatClient(openAiChatClient);
+
+builder.Services.AddChatClient(chatClient);
+builder.Services.AddScoped<IIaAssistantService, OpenAiAssistantService>();
+
+// Mantenemos el FakeEmailService por ahora (LUCHO ESTO TENES QUE HACER VOS)
+builder.Services.AddScoped<IEmailService, FakeEmailService>();
 
 builder.Services.AddScoped<IApiIntegrationService, FakeApiIntegrationService>();
-builder.Services.AddScoped<IIaAssistantService, FakeIaAssistantService>();
-builder.Services.AddScoped<IEmailService, FakeEmailService>();
+
+builder.Services.AddScoped<ITravelService, TravelService>();
+
+
+
 
 
 // ===========================================================================================================================
@@ -218,6 +245,55 @@ app.MapPost("/api/auth/reset-password", async (
     }
 });
 
+// ENDPOINT POST: Generar Itinerario con IA 
+
+app.MapPost("/api/travels/{id:guid}/generate", async (
+    Guid id,
+    ITravelRepository travelRepo, // 1. Necesitamos buscar el viaje en la BD
+    IChatClient chatClient) =>    // 2. Necesitamos a la IA
+{
+    try
+    {
+        // PASO A: Buscamos el viaje para saber destino, días, presupuesto...
+        var travel = await travelRepo.GetByIdAsync(id);
+
+        if (travel == null)
+            return Results.NotFound(new { message = "No encontré ese viaje en la base de datos." });
+
+        // PASO B: Creamos el "Prompt" (la orden para la IA)
+        var prompt = $@"Actúa como un guía de viajes experto.
+                        Crea un itinerario día por día para un viaje a {travel.Destination}.
+                        Duración: {travel.DurationDays} días.
+                        Presupuesto: {travel.EstimatedBudget} USD.
+                        Estilo de viaje: {travel.TravelStyle}.
+                        Dame solo el itinerario sin introducciones.";
+
+        // PASO C: Enviamos el mensaje a OpenAI
+        var mensajes = new List<ChatMessage>
+        {
+            new(ChatRole.User, prompt)
+        };
+
+        // Usamos .ToString() porque vimos en tu prueba que funciona bien en esta versión
+        var respuesta = await chatClient.GetResponseAsync(mensajes);
+        var textoItinerario = respuesta.ToString();
+
+        // PASO D: Devolvemos el resultado al usuario (y a Postman)
+        return Results.Ok(new
+        {
+            TravelId = id,
+            Destination = travel.Destination,
+            GeneratedItinerary = textoItinerario
+        });
+    }
+    catch (Exception ex)
+    {
+        return Results.Problem("La IA falló: " + ex.Message);
+    }
+})
+.WithName("GenerateItinerary")
+.RequireAuthorization();
+
 
 
 // ENDPOINT POST: Registro Usuario
@@ -261,6 +337,21 @@ app.MapPost("/api/auth/login", async (
     }
 })
 .WithName("LoginUser");
+
+// Test rapido para ver si funca (FUNCO) lo dejo por las dudas 
+//app.MapGet("/api/test-ai", async (IChatClient chatClient) =>
+//{
+//    var mensajes = new List<ChatMessage>
+//    {
+//        new(ChatRole.User, "Di algo sobre Boca Juniors")
+//    };
+
+
+//    var respuesta = await chatClient.GetResponseAsync(mensajes);
+
+ 
+//    return Results.Ok(respuesta.ToString());
+//});
 
 app.Run();
 

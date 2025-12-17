@@ -10,6 +10,6 @@ namespace PlanIT.DataAccess.Interfaces
     public interface IIaAssistantService
     {
         Task<string> GenerateItineraryJsonAsync(Travel travel, IEnumerable<ApiPlaceDetail> placeDetails);
-        Task<string> ChatWithAssistantAsync(string conversationHistoryJson, string newUserMessage);
+        Task<string> ChatWithAssistantAsync(string conversationHistoryJson, string newUserMessage) => throw new NotImplementedException();
     }
 }
