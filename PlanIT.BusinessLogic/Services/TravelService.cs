@@ -42,7 +42,11 @@ namespace PlanIT.BusinessLogic.Services
                 DurationDays = dto.DurationDays,
                 EstimatedBudget = dto.EstimatedBudget,
                 TravelStyle = dto.TravelStyle,
+                // Error 500
+                StartDate = DateTime.UtcNow,
+                EndDate = DateTime.UtcNow.AddDays(dto.DurationDays),
                 // Nota: Los campos ItineraryJson e IsGenerated seran nulos/false por defecto
+                CreatedDate = DateTime.UtcNow
             };
             
             await _travelRepository.AddAsync(travel);

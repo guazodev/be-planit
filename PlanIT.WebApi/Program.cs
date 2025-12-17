@@ -172,7 +172,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 // ===========================================================================================================================
-// 5. ENDPOINTS (Presentaci�n)
+// 5. ENDPOINTS (Presentacion)
 // ===========================================================================================================================
 
 // ENDPOINT POST: CREAR Viaje
@@ -249,51 +249,37 @@ app.MapPost("/api/auth/reset-password", async (
 
 app.MapPost("/api/travels/{id:guid}/generate", async (
     Guid id,
-    ITravelRepository travelRepo, // 1. Necesitamos buscar el viaje en la BD
-    IChatClient chatClient) =>    // 2. Necesitamos a la IA
+    ITravelRepository travelRepo, // Inyectamos el repo
+    IChatClient chatClient) =>    // Inyectamos la IA
 {
     try
     {
-        // PASO A: Buscamos el viaje para saber destino, días, presupuesto...
+        // 1. Buscar datos del viaje
         var travel = await travelRepo.GetByIdAsync(id);
+        if (travel == null) return Results.NotFound("Viaje no encontrado");
 
-        if (travel == null)
-            return Results.NotFound(new { message = "No encontré ese viaje en la base de datos." });
+        // 2. Crear el Prompt
+        var prompt = $"Arma un itinerario de viaje para {travel.Destination} de {travel.DurationDays} días. " +
+                     $"Presupuesto: {travel.EstimatedBudget}. Estilo: {travel.TravelStyle}. " +
+                     $"Formato: Solo el texto del plan día por día.";
 
-        // PASO B: Creamos el "Prompt" (la orden para la IA)
-        var prompt = $@"Actúa como un guía de viajes experto.
-                        Crea un itinerario día por día para un viaje a {travel.Destination}.
-                        Duración: {travel.DurationDays} días.
-                        Presupuesto: {travel.EstimatedBudget} USD.
-                        Estilo de viaje: {travel.TravelStyle}.
-                        Dame solo el itinerario sin introducciones.";
-
-        // PASO C: Enviamos el mensaje a OpenAI
-        var mensajes = new List<ChatMessage>
-        {
-            new(ChatRole.User, prompt)
-        };
-
-        // Usamos .ToString() porque vimos en tu prueba que funciona bien en esta versión
+        // 3. Preguntar a la IA
+        var mensajes = new List<ChatMessage> { new(ChatRole.User, prompt) };
         var respuesta = await chatClient.GetResponseAsync(mensajes);
-        var textoItinerario = respuesta.ToString();
 
-        // PASO D: Devolvemos el resultado al usuario (y a Postman)
+        // 4. Devolver resultado
         return Results.Ok(new
         {
-            TravelId = id,
-            Destination = travel.Destination,
-            GeneratedItinerary = textoItinerario
+            Destino = travel.Destination,
+            ItinerarioIA = respuesta.ToString()
         });
     }
     catch (Exception ex)
     {
-        return Results.Problem("La IA falló: " + ex.Message);
+        return Results.Problem(ex.Message);
     }
 })
-.WithName("GenerateItinerary")
 .RequireAuthorization();
-
 
 
 // ENDPOINT POST: Registro Usuario
@@ -355,6 +341,20 @@ app.MapPost("/api/auth/google-login", async (
 })
 .WithName("GoogleLogin");
 
+// ENDPOINT EXTRA: CHAT con la IA, asi probamos cosas
+app.MapPost("/api/ai/chat", async (IChatClient chatClient, string pregunta) =>
+{
+    var mensajes = new List<ChatMessage>
+    {
+        new(ChatRole.System, "Eres un asistente de viajes sarcástico y divertido."),
+        new(ChatRole.User, pregunta)
+    };
+
+    var respuesta = await chatClient.GetResponseAsync(mensajes);
+    return Results.Ok(new { TuPregunta = pregunta, RespuestaIA = respuesta.ToString() });
+})
+.RequireAuthorization();
+
 // Test rapido para ver si funca (FUNCO) lo dejo por las dudas 
 //app.MapGet("/api/test-ai", async (IChatClient chatClient) =>
 //{
@@ -366,7 +366,7 @@ app.MapPost("/api/auth/google-login", async (
 
 //    var respuesta = await chatClient.GetResponseAsync(mensajes);
 
- 
+
 //    return Results.Ok(respuesta.ToString());
 //});
 
