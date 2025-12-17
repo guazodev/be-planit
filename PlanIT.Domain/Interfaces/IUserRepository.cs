@@ -8,5 +8,6 @@ namespace PlanIT.Domain.Interfaces
     {
         Task<User?> GetUserByEmailAsync(string email);
         Task AddAsync(User user);
+        Task<User?> GetByEmailAsync(string email); // Obtiene usuario por email. Funcion para Google Oauth
     }
 }

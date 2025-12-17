@@ -5,6 +5,8 @@ using PlanIT.Domain.Interfaces;
 using System;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using Google.Apis.Auth;
+using Microsoft.Extensions.Configuration;
 
 namespace PlanIT.BusinessLogic.Services
 {
@@ -14,14 +16,16 @@ namespace PlanIT.BusinessLogic.Services
         private readonly IUnitOfWork _unitOfWork;
         private readonly IJwtProvider _jwtProvider;
         private readonly IEmailService _emailService;
+        private readonly IConfiguration _configuration;
 
 
-        public UserService(IUserRepository userRepository, IUnitOfWork unitOfWork, IJwtProvider JwtProvider, IEmailService emailService)
+        public UserService(IUserRepository userRepository, IUnitOfWork unitOfWork, IJwtProvider JwtProvider, IEmailService emailService, IConfiguration configuration)
         {
             _userRepository = userRepository;
             _unitOfWork = unitOfWork;
             _jwtProvider = JwtProvider;
             _emailService = emailService;
+            _configuration = configuration;
         }
 
         public async Task RegisterAsync(UserRegisterDto dto)
@@ -94,6 +98,50 @@ namespace PlanIT.BusinessLogic.Services
             user.PasswordResetExpires = null;
 
             await _unitOfWork.SaveChangesAsync();
+        }
+
+        public async Task<string> LoginWithGoogleAsync(string googleToken)
+        {
+            // 1. Validar el token con Google
+            GoogleJsonWebSignature.Payload payload;
+            try
+            {
+                var settings = new GoogleJsonWebSignature.ValidationSettings()
+                {
+                    Audience = new List<string>() { _configuration["Google:ClientId"] }
+                };
+
+                // Esto contacta a Google y verifica si el token es real y es para TU app
+                payload = await GoogleJsonWebSignature.ValidateAsync(googleToken, settings);
+            }
+            catch
+            {
+                throw new Exception("El token de Google es inválido.");
+            }
+
+            // 2. Verificar si el usuario ya existe en nuestra BD
+            var user = await _userRepository.GetByEmailAsync(payload.Email);
+
+            if (user == null)
+            {
+                // 3. Si NO existe, lo registramos automáticamente
+                user = new User
+                {
+                    Id = Guid.NewGuid(),
+                    Email = payload.Email,
+                    // Ponemos un password random o vacío, ya que entra con Google
+                    PasswordHash = "GOOGLE_AUTH_" + Guid.NewGuid(), 
+                    // Opcional: Podrías guardar payload.Name o payload.Picture si tienes esos campos
+                };
+
+                await _userRepository.AddAsync(user);
+                await _unitOfWork.SaveChangesAsync(); // Asegurate de guardar cambios
+            }
+
+            // 4. Generamos NUESTRO token (JWT) para que pueda usar la API
+            var token = _jwtProvider.GenerateToken(user);
+
+            return token;
         }
     }
 }

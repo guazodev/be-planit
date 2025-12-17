@@ -8,5 +8,6 @@ namespace PlanIT.BusinessLogic.Interfaces
         Task<string> LoginAsync(UserLoginDto dto); // Devuelve un string (el token JWT)
         Task RequestPasswordResetAsync(ForgotPasswordDto dto);
         Task ResetPasswordAsync(ResetPasswordDto dto);
+        Task<string> LoginWithGoogleAsync(string googleToken);
     }
 }

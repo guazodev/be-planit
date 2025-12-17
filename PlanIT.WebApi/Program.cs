@@ -338,6 +338,23 @@ app.MapPost("/api/auth/login", async (
 })
 .WithName("LoginUser");
 
+// ENDPOINT POST: Login con Google
+app.MapPost("/api/auth/google-login", async (
+    GoogleLoginDto dto, 
+    IUserService userService) =>
+{
+    try
+    {
+        var token = await userService.LoginWithGoogleAsync(dto.GoogleToken);
+        return Results.Ok(new { token });
+    }
+    catch (Exception ex)
+    {
+        return Results.BadRequest(ex.Message);
+    }
+})
+.WithName("GoogleLogin");
+
 // Test rapido para ver si funca (FUNCO) lo dejo por las dudas 
 //app.MapGet("/api/test-ai", async (IChatClient chatClient) =>
 //{
