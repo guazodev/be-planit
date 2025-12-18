@@ -144,6 +144,8 @@ builder.Services.AddScoped<IApiIntegrationService, FakeApiIntegrationService>();
 
 builder.Services.AddScoped<ITravelService, TravelService>();
 
+//Google 
+builder.Services.AddScoped<IApiIntegrationService, GooglePlacesService>();
 
 
 
@@ -249,28 +251,47 @@ app.MapPost("/api/auth/reset-password", async (
 
 app.MapPost("/api/travels/{id:guid}/generate", async (
     Guid id,
-    ITravelRepository travelRepo, // Inyectamos el repo
-    IChatClient chatClient) =>    // Inyectamos la IA
+    ITravelRepository travelRepo,
+    IApiIntegrationService googleService, //  INYECTO GOOGLE ACA
+    IChatClient chatClient) =>
 {
     try
     {
-        // 1. Buscar datos del viaje
+        // A. Buscar el viaje
         var travel = await travelRepo.GetByIdAsync(id);
         if (travel == null) return Results.NotFound("Viaje no encontrado");
 
-        // 2. Crear el Prompt
-        var prompt = $"Arma un itinerario de viaje para {travel.Destination} de {travel.DurationDays} días. " +
-                     $"Presupuesto: {travel.EstimatedBudget}. Estilo: {travel.TravelStyle}. " +
-                     $"Formato: Solo el texto del plan día por día.";
+        // B. Buscar lugares reales en Google 
+        // Esto busca "Anime en Japon" o "Parrilla en Corrientes"
+        var places = await googleService.GetNearbyPointsOfInterestAsync(travel.Destination, travel.TravelStyle);
 
-        // 3. Preguntar a la IA
+        // C. Convertir los lugares a texto para pasarselos a la IA
+        var googleData = string.Join("\n", places.Select(p => $"- {p.Name} (Rating: {p.Rating}⭐)"));
+
+        // D. Crear el Prompt recargado 
+        var prompt = $@"Arma un itinerario de viaje para {travel.Destination} de {travel.DurationDays} días.
+                        Presupuesto: {travel.EstimatedBudget}. Estilo: {travel.TravelStyle}.
+                        
+                        USA OBLIGATORIAMENTE ESTOS LUGARES REALES QUE ENCONTRÉ EN GOOGLE:
+                        {googleData}
+                        
+                        Formato: Solo el texto del plan día por día, sé creativo.";
+
+        // E. Preguntar a la IA
         var mensajes = new List<ChatMessage> { new(ChatRole.User, prompt) };
         var respuesta = await chatClient.GetResponseAsync(mensajes);
 
-        // 4. Devolver resultado
+        // F. Guardar en BD para no gastar IA dos veces
+        travel.ItineraryJson = respuesta.ToString();
+        travel.IsGenerated = true;
+        // Estos hay que revisar si agregamos
+        // await travelRepo.UpdateAsync(travel); 
+        // await unitOfWork.SaveChangesAsync();  
+
         return Results.Ok(new
         {
             Destino = travel.Destination,
+            LugaresEncontradosPorGoogle = places.Count(), // Para que ver cuantos lugares encontro la loquita
             ItinerarioIA = respuesta.ToString()
         });
     }
