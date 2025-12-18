@@ -248,56 +248,90 @@ app.MapPost("/api/auth/reset-password", async (
 });
 
 // ENDPOINT POST: Generar Itinerario con IA 
-
 app.MapPost("/api/travels/{id:guid}/generate", async (
     Guid id,
     ITravelRepository travelRepo,
     IApiIntegrationService googleService, //  INYECTO GOOGLE ACA
-    IChatClient chatClient) =>
+    IChatClient chatClient,
+    IUnitOfWork unitOfWork) =>   //aca inyecte el Unit of Work
 {
     try
     {
-        // A. Buscar el viaje
+        // 1. Buscar el viaje
         var travel = await travelRepo.GetByIdAsync(id);
         if (travel == null) return Results.NotFound("Viaje no encontrado");
 
-        // B. Buscar lugares reales en Google 
+        // 2. Buscar lugares reales en Google 
         // Esto busca "Anime en Japon" o "Parrilla en Corrientes"
         var places = await googleService.GetNearbyPointsOfInterestAsync(travel.Destination, travel.TravelStyle);
 
-        // C. Convertir los lugares a texto para pasarselos a la IA
-        var googleData = string.Join("\n", places.Select(p => $"- {p.Name} (Rating: {p.Rating}⭐)"));
+        // 3. Se prepara la info para el prompt
+        // Se pasa el nombre Y las cordenadas para que se incluyan en las respeuestas 
+        var googleContext = string.Join("\n", places.Select(p =>
+            $"- {p.Name} (Lat: {p.Latitude}, Lng: {p.Longitude}, Rating: {p.Rating}⭐)"));
 
-        // D. Crear el Prompt recargado 
-        var prompt = $@"Arma un itinerario de viaje para {travel.Destination} de {travel.DurationDays} días.
-                        Presupuesto: {travel.EstimatedBudget}. Estilo: {travel.TravelStyle}.
-                        
-                        USA OBLIGATORIAMENTE ESTOS LUGARES REALES QUE ENCONTRÉ EN GOOGLE:
-                        {googleData}
-                        
-                        Formato: Solo el texto del plan día por día, sé creativo.";
+        // 4. Crear el Prompt recargado (Parte Importate)  
+        var prompt = $@"
+            Eres un arquitecto de viajes experto. Tu trabajo es generar un itinerario estructurado.
+            
+            DATOS DEL VIAJE:
+            - Destino: {travel.Destination}
+            - Duración: {travel.DurationDays} días
+            - Presupuesto: {travel.EstimatedBudget} USD
+            - Estilo: {travel.TravelStyle}
 
-        // E. Preguntar a la IA
+            LUGARES DISPONIBLES (ÚSALOS):
+            {googleContext}
+
+            INSTRUCCIONES:
+            1. Crea un itinerario detallado día por día.
+            2. Si usas uno de los 'LUGARES DISPONIBLES', copia sus coordenadas exactas.
+            3. Si inventas una actividad (ej: 'Caminar por el centro'), deja coordenadas en 0 o estima.
+            4. IMPORTANTE: Tu respuesta debe ser SOLO un JSON válido con esta estructura exacta:
+
+            {{
+              ""trip_title"": ""Título creativo del viaje"",
+              ""days"": [
+                {{
+                  ""day_number"": 1,
+                  ""theme"": ""Tema del día (ej: Historia romana)"",
+                  ""activities"": [
+                    {{
+                      ""time"": ""09:00"",
+                      ""place_name"": ""Nombre del lugar"",
+                      ""description"": ""Breve descripción de qué hacer"",
+                      ""category"": ""Food|Culture|Nature|Shopping"",
+                      ""coordinates"": {{ ""lat"": 0.0, ""lng"": 0.0 }},
+                      ""price_estimate"": ""$20"",
+                      ""requires_ticket"": true/false
+                    }}
+                  ]
+                }}
+              ]
+            }}
+            
+            No incluyas texto antes ni después del JSON. Solo el JSON.";
+
+        // 5. Preguntar a la IA de OPEN
         var mensajes = new List<ChatMessage> { new(ChatRole.User, prompt) };
         var respuesta = await chatClient.GetResponseAsync(mensajes);
 
-        // F. Guardar en BD para no gastar IA dos veces
-        travel.ItineraryJson = respuesta.ToString();
-        travel.IsGenerated = true;
-        // Estos hay que revisar si agregamos
-        // await travelRepo.UpdateAsync(travel); 
-        // await unitOfWork.SaveChangesAsync();  
+        // Esto para Limpiar si la IA manda algo raro
+        var jsonLimpio = respuesta.ToString().Replace("```json", "").Replace("```", "").Trim();
 
-        return Results.Ok(new
-        {
-            Destino = travel.Destination,
-            LugaresEncontradosPorGoogle = places.Count(), // Para que ver cuantos lugares encontro la loquita
-            ItinerarioIA = respuesta.ToString()
-        });
+        // 6. Guardar y Devolver
+        travel.ItineraryJson = respuesta.ToString(); 
+        travel.IsGenerated = true;
+
+        travelRepo.Update(travel);           // entonces actualizo aca
+        await unitOfWork.SaveChangesAsync(); // guardo en Postgre aca
+
+        // Arreglamos el JSON crudo pero parseado para que el Swagger lo muestre lindo gg
+        return Results.Ok(System.Text.Json.JsonDocument.Parse(jsonLimpio));
     }
     catch (Exception ex)
     {
-        return Results.Problem(ex.Message);
+        return Results.Problem("Error generando itinerario: " + ex.Message);
     }
 })
 .RequireAuthorization();
@@ -379,6 +413,7 @@ app.MapPost("/api/auth/google-login", async (
 })
 .WithName("GoogleLogin");
 
+
 // ENDPOINT EXTRA: CHAT con la IA, asi probamos cosas
 app.MapPost("/api/ai/chat", async (IChatClient chatClient, string pregunta) =>
 {
@@ -392,21 +427,6 @@ app.MapPost("/api/ai/chat", async (IChatClient chatClient, string pregunta) =>
     return Results.Ok(new { TuPregunta = pregunta, RespuestaIA = respuesta.ToString() });
 })
 .RequireAuthorization();
-
-// Test rapido para ver si funca (FUNCO) lo dejo por las dudas 
-//app.MapGet("/api/test-ai", async (IChatClient chatClient) =>
-//{
-//    var mensajes = new List<ChatMessage>
-//    {
-//        new(ChatRole.User, "Di algo sobre Boca Juniors")
-//    };
-
-
-//    var respuesta = await chatClient.GetResponseAsync(mensajes);
-
-
-//    return Results.Ok(respuesta.ToString());
-//});
 
 app.Run();
 
