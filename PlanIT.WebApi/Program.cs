@@ -200,28 +200,6 @@ app.MapGet("/travels", async (PlanITDbContext db) =>
 });
 
 
-
-//endpoint para crear o insertar datos 
-
-app.MapPost("/travels", async (PlanITDbContext db) =>
-{
-    var travel = new Travel
-    {
-        Id = Guid.NewGuid(),
-        UserId = Guid.Parse("11111111-1111-1111-1111-111111111111"),
-        Destination = "Minimal API Test",
-        DurationDays = 2,
-        EstimatedBudget = 200,
-        TravelStyle = "Test",
-        CreatedDate = DateTime.UtcNow
-    };
-
-    db.Travels.Add(travel);
-    await db.SaveChangesAsync();
-
-    return Results.Created($"/travels/{travel.Id}", travel);
-});
-
 // ENDPOINT POST: CREAR Viaje
 app.MapPost("/api/travels", async (
     TravelCreationDto dto,
