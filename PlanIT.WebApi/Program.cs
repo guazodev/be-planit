@@ -19,6 +19,11 @@ using PlanIT.Infrastructure.Integrations;
 using Microsoft.Extensions.AI;
 using OpenAI;
 
+
+// Antes que todo Fix para las fechas de la DB 
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
+
 // ========================================================================================================================
 // 0. Builder, aca inicia la aplicacion 
 // ==========================================================================================================================
