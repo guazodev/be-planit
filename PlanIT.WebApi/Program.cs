@@ -177,6 +177,46 @@ app.UseAuthorization();
 // 5. ENDPOINTS (Presentacion)
 // ===========================================================================================================================
 
+//endpoint de TEST 
+
+app.MapGet("/db-test", async (PlanITDbContext db) =>
+{
+    var canConnect = await db.Database.CanConnectAsync();
+    return Results.Ok(new { canConnect });
+});
+
+
+//endpoint para leer datos 
+
+app.MapGet("/travels", async (PlanITDbContext db) =>
+{
+    var travels = await db.Travels.ToListAsync();
+    return Results.Ok(travels);
+});
+
+
+
+//endpoint para crear o insertar datos 
+
+app.MapPost("/travels", async (PlanITDbContext db) =>
+{
+    var travel = new Travel
+    {
+        Id = Guid.NewGuid(),
+        UserId = Guid.Parse("11111111-1111-1111-1111-111111111111"),
+        Destination = "Minimal API Test",
+        DurationDays = 2,
+        EstimatedBudget = 200,
+        TravelStyle = "Test",
+        CreatedDate = DateTime.UtcNow
+    };
+
+    db.Travels.Add(travel);
+    await db.SaveChangesAsync();
+
+    return Results.Created($"/travels/{travel.Id}", travel);
+});
+
 // ENDPOINT POST: CREAR Viaje
 app.MapPost("/api/travels", async (
     TravelCreationDto dto,

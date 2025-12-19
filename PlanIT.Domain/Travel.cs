@@ -17,8 +17,8 @@ namespace PlanIT.Domain
         public string TravelStyle { get; set; } = "Low Cost";
 
         
-        public DateTime StartDate { get; set; } = DateTime.UtcNow;
-        public DateTime EndDate { get; set; } = DateTime.UtcNow;
+        public DateTime? StartDate { get; set; } = DateTime.UtcNow;
+        public DateTime? EndDate { get; set; } = DateTime.UtcNow;
        
 
         public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
